@@ -42,7 +42,7 @@
           </div>
         </div>
 
-        <div class="col-lg-5 ">
+        <div class="col-lg-5  ">
             <ul class="navbar-nav float-right ">
                 @guest
                     <li class="nav-item">
@@ -53,11 +53,11 @@
                     </li>
                 @endguest
                 @auth
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown mr-5" >
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ Auth::user()->name }}
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu  " style="margin-left:-3rem" aria-labelledby="navbarDropdown">
                             <a class="nav-link" href="{{route('Logout_auth')}}">Logout </a>
                         </div>
 
