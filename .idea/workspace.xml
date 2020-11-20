@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55827bf5-2b7c-438d-a495-1fbfaea967e8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/auth/bk-login.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/auth/bk-login.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/auth/login_bk.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/auth/login_bk.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +152,8 @@
       <option name="presentableId" value="Default" />
       <updated>1605876681501</updated>
       <workItem from="1605876682809" duration="3765000" />
-      <workItem from="1605880571545" duration="1067000" />
+      <workItem from="1605880571545" duration="2050000" />
+      <workItem from="1605883504236" duration="299000" />
     </task>
     <servers />
   </component>

@@ -16,7 +16,7 @@
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;">
-<div  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);border-radius: 10px; margin-top:10%" class="col-md-6 p-5 offset-md-3 ">
+<div  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);border-radius: 10px; margin-top:5%" class="col-md-6 p-5 offset-md-3 ">
     <h1 class="text-center" style="font-family: 'Piedra', cursive;  ">Login <br></h1>
     <p class="text-center" style="font-family: 'Piedra', cursive;  ">To Enjoy Reading or Downloading more Books </p>
 
