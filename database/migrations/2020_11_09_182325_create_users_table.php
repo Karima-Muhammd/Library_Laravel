@@ -29,7 +29,8 @@ class CreateUsersTable extends Migration
                 'name' => 'Karima-Admin',
                 'email' => 'admin@admin.com',
                 'role' => 'admin',
-                'password'=>\Illuminate\Support\Facades\Hash::make('admin123')
+                'password'=>\Illuminate\Support\Facades\Hash::make('admin123'),
+                'api_token'=>\Illuminate\Support\Str::random(64)
             )
         );
     }

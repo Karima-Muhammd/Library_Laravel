@@ -91,6 +91,7 @@
                 error : function (xhr,status,error)
                 {
                     $("#msg_error").empty()
+                    $("#msg_success").empty()
                     $("#msg_error").show()
                     $.each(xhr.responseJSON.errors,function (key,item)
                     {

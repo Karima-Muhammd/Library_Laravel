@@ -66,73 +66,13 @@ class CategoryController extends Controller
             'category'=>$category,
         ]);
     }
-//    public function search($word)
-//    {
-//        $categorys=Category::where('name','like',"%$word%")->get();
-//        return view('categorys.search',[
-//            'categorys'=>$categorys,
-//        ]);
-//    }
-//    /**
-//     * Show the form for editing the specified resource.
-//     *
-//     * @param  \App\Category  $category
-//     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
-//     */
-//    public function edit($id)
-//    {
-//        $category=Category::find($id);
-//        return view('categorys.edit',[
-//            'category'=>$category,
-//        ]);
-//
-//    }
-//
-//    /**
-//     * Update the specified resource in storage.
-//     *
-//     * @param  \Illuminate\Http\Request  $request
-//     * @param  \App\Category  $category
-//     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
-//     */
-//    public function update(Request $request,$id)
-//    {
-//        $category=Category::find($id);
-//        $request->validate([
-//            'name'=>'required|max:30|string',
-//            'bio'=>'required|string',
-//            'img'=>'nullable|image|mimes:jpg,jpeg,png'
-//        ]);
-//        $img_name=$category->img;
-//        if($request->hasFile('img'))
-//        {
-//            //delete  the old
-//            if($category->img!=null)
-//                unlink(public_path("images/categorys/$img_name"));
-//
-//            //update the new
-//            $img=$request->img;
-//            $ext=$img->getClientOriginalExtension();
-//            $img_name="Category-".uniqid().".$ext";
-//            $img->move(public_path('images/categorys/'),$img_name);
-//
-//        }
-//        $category->update([
-//            'name'=>$request->name,
-//            'bio'=>$request->bio,
-//            'img'=>$img_name,
-//        ]);       return redirect(route('all_categorys'));
-//
-//
-//
-//    }
-//
-//    /**
-//     * Remove the specified resource from storage.
-//     *
-//     * @param  \App\Category  $category
-//     * @return \Illuminate\Http\RedirectResponse
-//     */
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Category  $category
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
+     */
     public function destroy($id)
     {
         $category=Category::find($id);

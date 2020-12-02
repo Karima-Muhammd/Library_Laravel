@@ -75,22 +75,7 @@
 
     @yield('content')
 </div>
-{{--<section class="footer mt-5">--}}
-{{--    <div class="container">--}}
-{{--        <div class="footer__content">--}}
-{{--            <div class="footer__heading">--}}
-{{--                <h2>Library</h2>--}}
-{{--            </div>--}}
-{{--            <p class="mb-0">Libray Is A Public Libray Can Read Books and Buy From it </p>--}}
 
-{{--            <ul class="social__media">--}}
-{{--                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>--}}
-{{--                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>--}}
-{{--                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>--}}
-{{--            </ul>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</section>--}}
 <script rel="script" src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
 <script rel="script" src="{{asset('js/popper.min.js')}}"></script>
 <script rel="script" src="{{asset('js/bootstrap.min.js')}}"></script>

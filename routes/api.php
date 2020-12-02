@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
+//api_password=QUbWSSOfektCsUEzdl7
+Route::group(['middleware'=>['api','checkApiPassword','adminAuthApi'],'namespace'=>'Api'],function (){
+    Route::resource('authors', 'AuthorApiController');
+    Route::resource('books', 'BookApiController');
+    Route::resource('categories', 'CategoryApiController');
+});

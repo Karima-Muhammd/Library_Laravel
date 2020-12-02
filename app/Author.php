@@ -4,14 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @method static get()
+ * @method static find(int $id)
+ * @method static create(array $array)
+ */
 class Author extends Model
 {
 
     protected $fillable=['name','bio','img'];
     //authors hasmany books
-    protected function book()
+    public function book()
     {
-        return $this->hasMany('App\Book');
+        return $this->hasMany(Book::class);
     }
     public static function boot() {
         parent::boot();
