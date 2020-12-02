@@ -20,7 +20,7 @@
 <div  class="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="col-lg-3">
-        <a class="navbar-brand " style="font-family: 'Piedra', cursive;" >Library |</a>
+        <a class="navbar-brand " style="font-family: 'Piedra', cursive;" >{{__('Library |')}}</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,13 +29,13 @@
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{route('all_authors')}}">Authors <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{route('all_authors')}}">{{__('Authors')}} <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('all_books')}}">Books</a>
+                    <a class="nav-link" href="{{route('all_books')}}">{{__('Books')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('all_categories')}}">Book Sections</a>
+                    <a class="nav-link" href="{{route('all_categories')}}">{{__('Book Sections')}}</a>
                 </li>
 
             </ul>
@@ -46,10 +46,10 @@
             <ul class="navbar-nav float-right ">
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" style="font-family: 'Piedra', cursive;" href="{{route('Register_auth')}}">Register Now |</a>
+                        <a class="nav-link" style="font-family: 'Piedra', cursive;" href="{{route('Register_auth')}}">{{__('Register Now') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="font-family: 'Piedra', cursive;" href="{{route('Login_auth')}}">Login</a>
+                        <a class="nav-link" style="font-family: 'Piedra', cursive;" href="{{route('Login_auth')}}">{{__('Login')}}</a>
                     </li>
                 @endguest
                 @auth
@@ -58,11 +58,25 @@
                             {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu  " style="margin-left:-3rem" aria-labelledby="navbarDropdown">
-                            <a class="nav-link" href="{{route('Logout_auth')}}">Logout </a>
+                            <a class="nav-link" href="{{route('Logout_auth')}}">{{__("Logout")}} </a>
                         </div>
 
                     </li>
                 @endauth
+
+                    @if(count(config('app.languages')) > 1)
+                        <li class="nav-item dropdown d-md-down-none">
+                            <a class="nav-link" style="font-size: 12px" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                {{ strtoupper(app()->getLocale()) }}
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                @foreach(config('app.languages') as $langLocale => $langName)
+                                    <a  style="color: white" class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+                                @endforeach
+                            </div>
+                        </li>
+                    @endif
+
             </ul>
         </div>
     </nav>
@@ -75,7 +89,10 @@
 
     @yield('content')
 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 11f4187... upload files
 <script rel="script" src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
 <script rel="script" src="{{asset('js/popper.min.js')}}"></script>
 <script rel="script" src="{{asset('js/bootstrap.min.js')}}"></script>

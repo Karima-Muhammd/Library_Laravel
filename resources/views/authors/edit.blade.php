@@ -1,22 +1,22 @@
 @extends('layouts.app')
 
 @section('title')
-    Update Author {{$author->name}}
+    {{__('Update Author')}} {{$author->name}}
 @endsection
 @section('content')
 
     <div class="col-md-7 offset-md-3 mt-5">
-        <h2 class="text-center" style="color:#002752; font-family: 'Tempus Sans ITC',fantasy">Update Author </h2>
+        <h2 class="text-center" style="color:#002752; font-family: 'Tempus Sans ITC',fantasy">{{__('Update Author ')}}</h2>
         <form class="mt-5" id="editAuthor" data-id="{{ $author->id }}"  enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <input type="text" name="name" value="{{old('name',$author->name)}}" placeholder="Author Name .." class="form-control">
+                <input type="text" name="name" value="{{old('name',$author->name)}}" placeholder="{{__('Author Name')}} .." class="form-control">
             </div>
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Bio </span>
+                    <span class="input-group-text">{{__('Bio')}} </span>
                 </div>
-                <textarea name="bio" class="form-control" placeholder="Write Author Bio ..">{{old('bio',$author->bio)}}"</textarea>
+                <textarea name="bio" class="form-control" placeholder="{{__('Write Author Bio)'}} ..">{{old('bio',$author->bio)}}"</textarea>
             </div>
             @if($author->img !=null)
                 <img class="img-thumbnail d-inline " height="40rem" width="200rem" src="{{asset("images/authors/$author->img")}}">
@@ -27,7 +27,7 @@
                 <input type="file"  name="img">
             </div>
             <div class="mt-2">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">{{__('Save')}}</button>
             </div>
         </form>
         <div class="alert alert-success mt-3"  style="display: none" id="msg_success"></div>

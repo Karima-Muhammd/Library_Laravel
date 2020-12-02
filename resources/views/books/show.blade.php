@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    Show Books
+    {{__('Show Books')}}
 @endsection
 @section('style')
     <style>
@@ -28,18 +28,17 @@
                 @else
                     <img class="img-thumbnail text-left" height="40rem" width="100rem" src="{{asset("images/books/no-image.jpg")}}">
                 @endif
-                <p class="badge badge-pill ">By : <a href="{{route('show_authors',$book->author->id )}}">{{$book->author->name}}</a></p>
+                <p class="badge badge-pill ">{{__('By')}} : <a href="{{route('show_authors',$book->author->id )}}">{{$book->author->name}}</a></p>
                 <div class="float-left">
-                    <p><span class="badge badge-pill">Overview: </span> <br> {{ $book->desc}}</p>
-                    <p ><span class="badge badge-pill">Price in Market :</span> {{$book->price}}$</p>
-                    <p ><span class="badge badge-pill">Number of Downloads :</span> {{$book->number_download}}</p>
-                    <p ><span class="badge badge-pill">File Type :</span> PDF</p>
+                    <p><span class="badge badge-pill">{{__('Overview')}} : </span> <br> {{ $book->desc}}</p>
+                    <p ><span class="badge badge-pill">{{__('Price in Market')}} :</span> {{$book->price}}$</p>
+                    <p ><span class="badge badge-pill">{{__('Number of Downloads')}} :</span> {{$book->number_download}}</p>
 
-                    <small class="d-block"><span class="badge badge-pill">Create at :</span> {{$book->created_at}}</small>
+                    <small class="d-block"><span class="badge badge-pill">{{__('Create at')}} :</span> {{$book->created_at}}</small>
                 <br>
-                <a class="btn btn-primary" href="{{route('all_books')}}"> ↩ GO Home </a>
-                <a  href="{{route('viewPDF',$book->id)}}" class="btn btn-warning"> Read </a>
-                <a  href="{{route('Download',$book->id)}}" class="btn btn-success"> Download </a>
+                <a class="btn btn-primary" href="{{route('all_books')}}"> ↩ {{__('GO Home')}} </a>
+                <a  href="{{route('viewPDF',$book->id)}}" class="btn btn-warning"> {{__('Read')}} </a>
+                <a  href="{{route('Download',$book->id)}}" class="btn btn-success"> {{__('Download')}} </a>
 
                 </div>
             </div>

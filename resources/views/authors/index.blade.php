@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-   Authors
+   {{__('Authors')}}
 @endsection
 @section('style')
     <style>
@@ -27,16 +27,16 @@
 @section('content')
 
     <div class="d-block">
-    <h1 class="d-inline ">Book authors</h1>
+    <h1 class="d-inline ">{{__('Book authors')}}</h1>
     @auth
         @if(Auth::user()->role=='admin')
-        <a  href="{{route('create_author')}}" class="badge badge-warning"> Create New Author ? </a>
+        <a  href="{{route('create_author')}}" class="badge badge-warning"> {{__('Create New Author ?')}} </a>
         @endif
     @endauth
 
     </div>
     <small style="color:#dbcbbd;float: left">
-        {{count($authors)}} Author
+        {{count($authors)}} {{__('Author')}}
     </small>
     <br>
     <hr class="section_hr" />
@@ -61,15 +61,15 @@
                 <p class=""><a style="color: black; text-decoration: none" href="{{route('show_authors',$author->id)}}">{{$author->name}}</a> </p>
 
                 <div class="col-lg-12 pb-3">
-                    <a  href="{{route('show_authors',$author->id)}}" class="badge badge-warning"> Details</a>
+                    <a  href="{{route('show_authors',$author->id)}}" class="badge badge-warning"> {{__('Details')}}</a>
                     @auth
                         @if(Auth::user()->role=='admin')
-                            <a  href="{{route('edit_author',$author->id)}}" class="badge badge-success  "> Update </a>
-                            <a type="submit"  data-id="{{ $author->id }}" class="badge badge-success" onclick="deleteAuthor(event.target)"  > Delete </a>
+                            <a  href="{{route('edit_author',$author->id)}}" class="badge badge-success  "> {{__('Update')}} </a>
+                            <a type="submit"  data-id="{{ $author->id }}" class="badge badge-success" onclick="deleteAuthor(event.target)"  > {{__('Delete')}} </a>
                         @endif
                     @endauth
                         <hr class="author_hr" />
-                        <p style="color :#dbcbbd; font-family: 'Agency FB'">{{count($author->book)}} Book </p>
+                        <p style="color :#dbcbbd; font-family: 'Agency FB'">{{count($author->book)}} {{__('Book')}} </p>
                 </div>
             </div>
         </div>

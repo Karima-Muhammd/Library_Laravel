@@ -6,20 +6,20 @@
 @section('content')
 
     <div class="col-md-8 offset-md-2 mt-5 pb-5">
-        <h2 class="text-center" style="color:#002752; font-family: 'Tempus Sans ITC',fantasy">Add a Book </h2>
+        <h2 class="text-center" style="color:#002752; font-family: 'Tempus Sans ITC',fantasy">{{__('Add a Book')}} </h2>
 
         <form class="mt-3" id="create_book">
             @csrf
     <div class="row">
         <div class="input-group col-md-6 mt-2">
-            <input type="text" value="{{old('name')}}" name="name" placeholder="Book Name .." class="form-control">
+            <input type="text" value="{{old('name')}}" name="name" placeholder="{{__('Book Name')}} .." class="form-control">
         </div>
         <div class="input-group col-md-6">
-            <input type="text" name="price" value="{{old('price')}}" placeholder="Book price .." class="form-control">
+            <input type="text" name="price" value="{{old('price')}}" placeholder="{{__('Book price')}} .." class="form-control">
         </div>
         <div class="input-group col-md-6 mt-2">
             <div class="input-group-prepend">
-                <label class="input-group-text"  for="inputGroupSelect01">Choose Author</label>
+                <label class="input-group-text"  for="inputGroupSelect01">{{__('Choose Author')}}</label>
             </div>
             <select name="author_id" class="custom-select" id="inputGroupSelect01">
                @foreach($authors as $author)
@@ -29,7 +29,7 @@
         </div>
             <div class="input-group col-md-6 mt-2">
             <div class="input-group-prepend">
-                <label class="input-group-text"  for="inputGroupSelect01">Choose Section</label>
+                <label class="input-group-text"  for="inputGroupSelect01">{{__('Choose Section')}}</label>
             </div>
             <select name="category_id" class="custom-select" id="inputGroupSelect01">
                @foreach($Categories as $Category)
@@ -40,19 +40,19 @@
 
             <div class="input-group col-md-12 mt-2">
             <div class="input-group-prepend">
-                <span class="input-group-text">Description</span>
+                <span class="input-group-text">{{__('Description')}}</span>
             </div>
             <textarea name="desc"  class="form-control" placeholder="Write Book Description ..">{{old('desc')}}</textarea>
         </div>
             <div class="input-group col-md-6 mt-2">
-                <span class="mt-2 mr-1">Image : </span>   <input type="file" value="{{old('img')}}" class="form-control" name="img">
+                <span class="mt-2 mr-1">{{__('Image')}} : </span>   <input type="file" value="{{old('img')}}" class="form-control" name="img">
             </div>
             <div class="input-group col-md-6 mt-2">
-                   <span class="mt-2 mr-1"> Pdf : </span> <input type="file"  class="form-control" name="pdf">
+                   <span class="mt-2 mr-1">{{__('Pdf')}}  : </span> <input type="file"  class="form-control" name="pdf">
             </div>
 
             <div class="mt-4 col-md-6 offset-4">
-        <button type="submit" style="width: 15rem" class="btn btn-success">Save</button>
+        <button type="submit" style="width: 15rem" class="btn btn-success">{{__('Save')}}</button>
         </div>
 
       </div>

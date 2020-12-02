@@ -6,16 +6,16 @@
 @section('content')
 
     <div class="col-md-7 offset-md-3 mt-5">
-        <h2 class="text-center" style="color:#002752; font-family: 'Tempus Sans ITC',fantasy">Create Category </h2>
+        <h2 class="text-center" style="color:#002752; font-family: 'Tempus Sans ITC',fantasy">{{__('Create Category')}} </h2>
 
         <form class="mt-5" id="create_cate">
             @csrf
         <div class="input-group">
-            <input type="text" name="name" value="{{old('name')}}"  placeholder="Category Name .." class="form-control">
+            <input type="text" name="name" value="{{old('name')}}"  placeholder="{{__('Category Name')}} .." class="form-control">
         </div>
 
         <div class="mt-2">
-        <button type="submit" class="btn btn-primary ">Submit</button>
+        <button type="submit" class="btn btn-primary ">{{__('Save')}}</button>
         </div>
 
     </form>

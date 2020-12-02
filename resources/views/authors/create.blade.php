@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Create Author
+    {{__('Create Author')}}
 @endsection
 @section('style')
 <style>
@@ -14,30 +14,25 @@
 @section('content')
 
     <div class="col-md-7 offset-md-3 mt-5">
-        <h2 class="text-center" style="color:#002752; font-family: 'Tempus Sans ITC',fantasy">Create Author </h2>
+        <h2 class="text-center" style="color:#002752; font-family: 'Tempus Sans ITC',fantasy">{{__('Create Author')}} </h2>
 
         <form class="mt-5" id="create_author" enctype="multipart/form-data">
             @csrf
         <div class="input-group">
-            <input type="text" name="name" value="{{old('name')}}"  placeholder="Author Name .." class="form-control">
+            <input type="text" name="name" value="{{old('name')}}"  placeholder="{{__('Author Name')}} .." class="form-control">
         </div>
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text">Bio </span>
             </div>
-            <textarea name="bio" class="form-control" placeholder="Write Author Bio ..">{{old('bio')}} </textarea>
+            <textarea name="bio" class="form-control" placeholder="{{__('Write Author Bio')}} ..">{{old('bio')}} </textarea>
         </div>
             <div class="input-group">
                     <input type="file" class="form-control" name="img">
             </div>
 
-            <div class="progress">
-                <div class="bar"></div >
-                <div class="percent">0%</div >
-            </div>
-
             <div class="mt-2">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">{{__('Save')}}</button>
         </div>
 
     </form>

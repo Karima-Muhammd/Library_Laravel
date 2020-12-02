@@ -27,16 +27,16 @@
 @section('content')
 
     <div class="d-block">
-        <h1 class="d-inline ">Book Sections</h1>
+        <h1 class="d-inline ">{{__('Book Sections')}}</h1>
         @auth
             @if(Auth::user()->role=='admin')
-                <a  href="{{route('create_category')}}" class="badge badge-warning"> Create New Section ? </a>
+                <a  href="{{route('create_category')}}" class="badge badge-warning"> {{__('Create New Section ?')}} </a>
             @endif
         @endauth
 
     </div>
     <small  style="color:#dbcbbd;float: left">
-        <span id="number_cate">{{count($categories)}}</span> Section
+        <span id="number_cate">{{count($categories)}}</span> {{__('Section')}}
     </small>
     <br>
     <hr class="section_hr" />
@@ -59,17 +59,17 @@
                                 <br >
                             </p>
                             <div class="col-lg-12 m-0 p-0">
-                                <a  href="{{route('show_category',$category->id)}}" class="badge badge-warning"> Details</a>
+                                <a  href="{{route('show_category',$category->id)}}" class="badge badge-warning"> {{__('Details')}}</a>
                                 @auth
                                     @if(Auth::user()->role=='admin')
-                                        <a type="submit"  data-id="{{ $category->id }}" class="badge badge-success" onclick="deleteCategory(event.target)"  > Delete </a>
+                                        <a type="submit"  data-id="{{ $category->id }}" class="badge badge-success" onclick="deleteCategory(event.target)"  > {{__('Delete')}} </a>
                                     @endif
                            @endauth
 
 
                             <div class="col-lg-12 pb-3">
                                 <hr class="author_hr" />
-                                <p style="color :#dbcbbd; font-family: 'Agency FB'">{{count($category->book)}} Book </p>
+                                <p style="color :#dbcbbd; font-family: 'Agency FB'">{{count($category->book)}} {{__('Book')}} </p>
                             </div>
                             </div>
                         </div>

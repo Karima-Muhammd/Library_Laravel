@@ -5,17 +5,17 @@
 @endsection
 @section('content')
     <div class="col-md-8 offset-md-2 mt-3 pb-5">
-        <h2 class="text-center" style="color:#002752; font-family: 'Tempus Sans ITC',fantasy">Update Book </h2>
+        <h2 class="text-center" style="color:#002752; font-family: 'Tempus Sans ITC',fantasy">{{__('Update Book')}} </h2>
 
            <form class="mt-3" id="editBook" data-id="{{ $book->id }}"  enctype="multipart/form-data">
             @csrf
         <div class="row">
             <div class="form-group col-md-6">
-                <input type="text" name="name" value="{{old('name',$book->name)}}" placeholder="Book Name .." class="form-control">
+                <input type="text" name="name" value="{{old('name',$book->name)}}" placeholder="{{__('Book Name')}} .." class="form-control">
             </div>
 
             <div class="form-group col-md-6">
-                <input type="text" name="price" value="{{old('price',$book->price)}}"  placeholder="Book Price .." class="form-control">
+                <input type="text" name="price" value="{{old('price',$book->price)}}"  placeholder="{{__('Book Price')}} .." class="form-control">
             </div>
             <div class="form-group col-md-6">
                 <select name="author_id" class="custom-select" id="inputGroupSelect01">
@@ -33,9 +33,9 @@
             </div>
             <div class="input-group col-md-12">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Description</span>
-                </div>
-                <textarea name="desc" class="form-control" placeholder="Write Book Description  ..">{{old('desc',$book->desc)}}</textarea>
+                    <span class="input-group-text">{{__('Description')}}</span>
+                </div>{{__('')}}
+                <textarea name="desc" class="form-control" placeholder="{{__('Write Book Description')}}  ..">{{old('desc',$book->desc)}}</textarea>
             </div>
             <div class="col-md-12 mt-2">
                 <div class="row">
@@ -47,9 +47,9 @@
                             @endif
                     </div>
                     <div class="col-md-9 mt-3">
-                        <label class=" mr-1 d-block ">Image : </label>   <input type="file"  class="form-control " name="img">
-                        <span class="mt-5 mr-1"> Pdf : </span> <input type="file"   class="form-control" name="pdf">
-                        <button type="submit" style="width: 15rem; margin-left: 18rem" class="btn btn-success mt-5 " >Update</button>
+                        <label class=" mr-1 d-block ">{{__('Image')}} : </label>   <input type="file"  class="form-control " name="img">
+                        <span class="mt-5 mr-1"> {{__('Pdf')}} : </span> <input type="file"   class="form-control" name="pdf">
+                        <button type="submit" style="width: 15rem; margin-left: 18rem" class="btn btn-success mt-5 " >{{__('Update')}}</button>
 
                     </div>
 

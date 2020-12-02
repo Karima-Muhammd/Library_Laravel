@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    Show Authors
+    {{__('Show Authors')}}
 @endsection
 @section('style')
     <style>
@@ -27,10 +27,10 @@
                 <img class="img-thumbnail d-block" height="40rem" width="100rem" src="{{asset("images/authors/no-image.jpg")}}">
             @endif
 
-            <p><span class="badge badge-pill">Bio:</span> <br>{{$author->bio}}</p>
+            <p><span class="badge badge-pill">{{__('Bio')}} :</span> <br>{{$author->bio}}</p>
             <hr>
             @if(!empty($author->book))
-                <h6>His Works :</h6>
+                <h6>{{__('His Works')}} :</h6>
                 <br>
                 <div class="row m-0 p-0">
                     @foreach($author->book as $book)
@@ -48,7 +48,7 @@
             <br>
             <small class="d-block">{{$author->created_at}}</small>
             <br>
-            <a class="btn btn-primary" href="{{route('all_authors')}}">↩ GO Home</a>
+            <a class="btn btn-primary" href="{{route('all_authors')}}">↩ {{__('GO Home')}}</a>
         </div>
         <div class="col-lg-3  " style="margin-top: 10%">
           <div class="float-right">  @include('categories.categories')</div>

@@ -6,10 +6,10 @@
      Books
 @endsection
 @section('content')
-    <h1 style="font-family: 'Agency FB';" class="d-inline ">Most Popular</h1>
+    <h1 style="font-family: 'Agency FB';" class="d-inline ">{{__('Most Popular')}}</h1>
     @auth
         @if(Auth::user()->role=='admin')
-        <a  href="{{route('create_book')}}" class="badge badge-warning"> Create New book ? </a>
+        <a  href="{{route('create_book')}}" class="badge badge-warning">{{__('Create New book ?')}}  </a>
         @endif
    @endauth
     <hr>
@@ -25,16 +25,16 @@
                 @endif
                 <div class="card-body">
                     <div class="col-lg-12 p-0">
-                    <p class="badge badge-pill">By : <a href="{{route('show_authors',$book->author_id)}}">{{$book->author->name}}</a></p>
+                    <p class="badge badge-pill">{{__('By')}}: <a href="{{route('show_authors',$book->author_id)}}">{{$book->author->name}}</a></p>
                     </div>
                     <div class="col-lg-12 p-0">
-                        <a  href="{{route('show_books',$book->id)}}" class="badge badge-warning ml-1"> Details</a>
-                        <a  href="{{route('viewPDF',$book->id)}}" class="badge badge-primary ml-1"> Read </a>
-                        <a  href="{{route('Download',$book->id)}}" class="badge badge-success ml-1"> Download </a>
+                        <a  href="{{route('show_books',$book->id)}}" class="badge badge-warning ml-1"> {{__('Details')}}</a>
+                        <a  href="{{route('viewPDF',$book->id)}}" class="badge badge-primary ml-1">{{__('Read')}}  </a>
+                        <a  href="{{route('Download',$book->id)}}" class="badge badge-success ml-1"> {{__('Download')}} </a>
                         @auth
                             @if(Auth::user()->role=='admin')
-                                <a  href="{{route('edit_book',$book->id)}}" class="badge badge-success  "> Update </a>
-                                <a type="submit"  data-id="{{ $book->id }}" class="badge badge-danger" onclick="deleteBook(event.target)"  > Delete </a>
+                                <a  href="{{route('edit_book',$book->id)}}" class="badge badge-success  "> {{__('Update')}} </a>
+                                <a type="submit"  data-id="{{ $book->id }}" class="badge badge-danger" onclick="deleteBook(event.target)"  >{{__('Delete')}}  </a>
                             @endif
                         @endauth
                     </div>
@@ -52,7 +52,7 @@
         </div>
     </div>
     <br>
-    <h1 style="font-family: 'Agency FB';" class="d-inline ">Recent books </h1>
+    <h1 style="font-family: 'Agency FB';" class="d-inline ">{{__('Recent books')}}</h1>
     <hr>
     <div class="row">
         @foreach($recent as $book)
@@ -66,10 +66,10 @@
                     @endif
                     <div class="card-body">
                         <div class="col-lg-12 p-0">
-                            <p class="badge badge-pill text-center">By : <a href="{{route('show_authors',$book->author_id)}}">{{$book->author->name}}</a></p>
+                            <p class="badge badge-pill text-center">{{__('By')}} : <a href="{{route('show_authors',$book->author_id)}}">{{$book->author->name}}</a></p>
                         </div>
                         <div class="col-lg-12 p-0">
-                            <a  href="{{route('show_books',$book->id)}}" class="badge badge-warning"> Details</a>
+                            <a  href="{{route('show_books',$book->id)}}" class="badge badge-warning"> {{__('Details')}}</a>
                         </div>
                     </div>
                 </div>

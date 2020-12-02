@@ -1,6 +1,6 @@
-<h2 style="font-family: 'Agency FB'">Books Section</h2>
+<h2 style="font-family: 'Agency FB'">{{__('Book Sections')}}</h2>
 <small style="color: #dbcbbd;float: left">
-    <span class="number_cate">{{count($categories)}}</span> Section
+    <span class="number_cate">{{count($categories)}}</span> {{__('Section')}}
 </small>
 <br>
 <hr class="section_hr" />
