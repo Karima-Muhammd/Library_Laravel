@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap" rel="stylesheet">
     <title>Sign in </title>
 </head>
 <body style=" background-image:url({{asset('images/auth/login_bk.jpg')}});
     height: 100%;
     background-repeat: no-repeat;
-    background-size: cover;">
+    background-size: cover;font-family: 'Piedra', cursive; @if(app()->getLocale()=='ar') font-family: 'Rakkas', cursive; @endif  ">
 <div  style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);border-radius: 10px; margin-top:5%" class="col-md-6 p-5 offset-md-3 ">
-    <h1 class="text-center" style="font-family: 'Piedra', cursive;  ">{{__('Login')}} <br></h1>
-    <p class="text-center" style="font-family: 'Piedra', cursive;  ">{{__('To Enjoy Reading or Downloading more Books')}} </p>
+    <h1 class="text-center">{{__('Login')}} <br></h1>
+    <p class="text-center" >{{__('To Enjoy Reading or Downloading more Books')}} </p>
 
     <form style="margin-top:8% ; "  action="{{route('doLogin_auth')}}" method="post" autocomplete="off" >
         @csrf
@@ -31,8 +32,8 @@
         </div>
         <div style="text-align: center ; margin-top: 30px " >
             <button type="submit" style="width: 60%; text-decoration: none" name="login_btn" class="btn btn-primary">{{__('Login')}} </button>
-            <span style="display: block; margin-top: 30px">{{__('Not a Member ?')}} <a style="font-family: 'Piedra', cursive;" href="{{route('Register_auth')}}">{{__('SignUp Now')}} </a> </span>
-            <span style="display: block; margin-top: 10px"><a style="font-family: 'Piedra', cursive;font-size: 30px;text-decoration: none; color: black" href="{{route('all_books')}}">  ↩ {{__('GO Home')}} </a> </span>
+            <span style="display: block; margin-top: 30px">{{__('Not a Member ?')}} <a style="" href="{{route('Register_auth')}}">{{__('SignUp Now')}} </a> </span>
+            <span style="display: block; margin-top: 10px"><a style="font-size: 30px;text-decoration: none; color: black" href="{{route('all_books')}}">  ↩ {{__('GO Home')}} </a> </span>
 
         </div>
 

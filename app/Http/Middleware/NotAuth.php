@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class NotAuth
 {
@@ -16,11 +17,11 @@ class NotAuth
      */
     public function handle($request, Closure $next)
     {
-        //myd5olsh hna 8er el not auth
-       if(!Auth::check())
+        //myd5olsh hna 8er el not login
+       if(!session()->has('subscriber'))
         return $next($request);
        else
-        return  redirect(route('all_books'));
+        return \redirect(route('home'));
 
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    Categories
+{{__('Categories')}}
 @endsection
 @section('style')
     <style>
@@ -36,7 +36,7 @@
 
     </div>
     <small  style="color:#dbcbbd;float: left">
-        <span id="number_cate">{{count($categories)}}</span> {{__('Section')}}
+        <span id="number_cate">{{__(count($categories))}}</span> {{__('Section')}}
     </small>
     <br>
     <hr class="section_hr" />
@@ -69,7 +69,7 @@
 
                             <div class="col-lg-12 pb-3">
                                 <hr class="author_hr" />
-                                <p style="color :#dbcbbd; font-family: 'Agency FB'">{{count($category->book)}} {{__('Book')}} </p>
+                                <p style="color :#dbcbbd; font-family: 'Agency FB';@if(app()->getLocale()=='ar') font-family: 'Rakkas', cursive; @endif">{{__(count($category->book))}} {{__('Book')}} </p>
                             </div>
                             </div>
                         </div>

@@ -19,15 +19,13 @@ class BookController extends Controller
     public function index()
     {
         //validation
-        $result=Book::paginate(8);
-        $recent=Book::orderBy('id','Desc')->take(4)->get();
+        $result=Book::orderBy('id','desc')->paginate(8);
+        $recent=Book::orderBy('id')->take(4)->get();
 
         return view('books.index',[
             'books'=>$result,
             'recent'=>$recent,
         ]);
-
-        return redirect(route('all_books'));
 
     }
     public function latest()

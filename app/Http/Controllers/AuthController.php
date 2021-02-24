@@ -49,7 +49,6 @@ class AuthController extends Controller
                 'error_key' => "Password isn't match Email"
             ]);
         }
-
     }
     public function Logout()
     {

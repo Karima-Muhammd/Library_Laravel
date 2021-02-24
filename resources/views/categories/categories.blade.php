@@ -1,6 +1,6 @@
-<h2 style="font-family: 'Agency FB'">{{__('Book Sections')}}</h2>
+<h2 style="font-family: 'Agency FB' @if(app()->getLocale()=='ar') font-family: 'Rakkas', cursive; @endif">{{__('Book Sections')}}</h2>
 <small style="color: #dbcbbd;float: left">
-    <span class="number_cate">{{count($categories)}}</span> {{__('Section')}}
+    <span class="number_cate">{{__(count($categories))}}</span> {{__('Section')}}
 </small>
 <br>
 <hr class="section_hr" />

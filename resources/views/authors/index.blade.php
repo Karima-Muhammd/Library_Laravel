@@ -36,7 +36,7 @@
 
     </div>
     <small style="color:#dbcbbd;float: left">
-        {{count($authors)}} {{__('Author')}}
+        {{__(count($authors))}} {{__('Author')}}
     </small>
     <br>
     <hr class="section_hr" />
@@ -69,7 +69,7 @@
                         @endif
                     @endauth
                         <hr class="author_hr" />
-                        <p style="color :#dbcbbd; font-family: 'Agency FB'">{{count($author->book)}} {{__('Book')}} </p>
+                        <p style="color :#dbcbbd; font-family: 'Agency FB' @if(app()->getLocale()=='ar') font-family: 'Rakkas', cursive; @endif">{{__(count($author->book))}} {{__('Book')}} </p>
                 </div>
             </div>
         </div>

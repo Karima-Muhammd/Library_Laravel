@@ -10,17 +10,20 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <title>@yield('title')</title>
 </head>
 @yield('style')
 
 <body style="
-@yield('body_style')">
+@yield('body_style'); @if(app()->getLocale()=='ar') font-family: 'Rakkas', cursive; @endif">
 <div  class="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="col-lg-3">
-        <a class="navbar-brand " style="font-family: 'Piedra', cursive;" >{{__('Library |')}}</a>
+        <a class="navbar-brand " style="font-family: 'Piedra', cursive; @if(app()->getLocale()=='ar') font-family: 'Rakkas', cursive; @endif" >{{__('Library |')}}</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -46,10 +49,10 @@
             <ul class="navbar-nav float-right ">
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" style="font-family: 'Piedra', cursive;" href="{{route('Register_auth')}}">{{__('Register Now') }}</a>
+                        <a class="nav-link" style="font-family: 'Piedra', cursive;@if(app()->getLocale()=='ar') font-family: 'Rakkas', cursive; @endif" href="{{route('Register_auth')}}">{{__('Register Now') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="font-family: 'Piedra', cursive;" href="{{route('Login_auth')}}">{{__('Login')}}</a>
+                        <a class="nav-link" style="font-family: 'Piedra', cursive;@if(app()->getLocale()=='ar') font-family: 'Rakkas', cursive; @endif" href="{{route('Login_auth')}}">{{__('Login')}}</a>
                     </li>
                 @endguest
                 @auth
@@ -89,14 +92,11 @@
 
     @yield('content')
 </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 11f4187... upload files
 <script rel="script" src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
 <script rel="script" src="{{asset('js/popper.min.js')}}"></script>
 <script rel="script" src="{{asset('js/bootstrap.min.js')}}"></script>
 <script rel="script" src="{{asset('js/script.js')}}"></script>
+
  @yield('script')
 
 </body>

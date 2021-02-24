@@ -24,6 +24,6 @@
 <br>
 <small class="d-block">{{$category->created_at}}</small>
 <br>
-<a class="btn btn-success" href="{{route('all_authors')}}">{{__('Go Home')}}</a>
+<a class="btn btn-success" href="{{route('all_authors')}}">{{__('GO Home')}}</a>
 <a class="btn btn-success" href="{{route('latest_authors')}}">{{__('Show Recent Authors')}}</a>
 @endsection

@@ -6,16 +6,16 @@
      Books
 @endsection
 @section('content')
-    <h1 style="font-family: 'Agency FB';" class="d-inline ">{{__('Most Popular')}}</h1>
+    <h1 style="font-family: 'Agency FB';@if(app()->getLocale()=='ar') font-family: 'Rakkas', cursive; @endif  " class="d-inline ">{{__('Most Popular')}}</h1>
     @auth
         @if(Auth::user()->role=='admin')
         <a  href="{{route('create_book')}}" class="badge badge-warning">{{__('Create New book ?')}}  </a>
         @endif
    @endauth
     <hr>
-    <div class="row book_container">
-    @foreach($books as $book)
-        <div  id="row_book{{$book->id}}" class=" col-lg-3 mb-1">
+    <div class="row book_container ">
+       @foreach($books as $book)
+        <div   class=" col-lg-3 mb-1 row_book{{$book->id}}">
             <div class="card" >
 
                 @if($book->img !=null)
@@ -34,29 +34,30 @@
                         @auth
                             @if(Auth::user()->role=='admin')
                                 <a  href="{{route('edit_book',$book->id)}}" class="badge badge-success  "> {{__('Update')}} </a>
-                                <a type="submit"  data-id="{{ $book->id }}" class="badge badge-danger" onclick="deleteBook(event.target)"  >{{__('Delete')}}  </a>
+                                <a style="padding: 7px" type="submit"  data-id="{{ $book->id }}" class="badge badge-danger" onclick="deleteBook(event.target)"  >{{__('Delete')}}  </a>
                             @endif
                         @endauth
                     </div>
                 </div>
+          </div>
         </div>
-        </div>
-    @endforeach
+     @endforeach
+
         <hr>
 
 
         <div class="col-lg-12 mt-5 " >
             <div style="margin-left: 40%" >
-            {!! $books->render() !!}
+            {{ $books->render() }}
             </div>
         </div>
     </div>
     <br>
-    <h1 style="font-family: 'Agency FB';" class="d-inline ">{{__('Recent books')}}</h1>
+    <h1 style="font-family: 'Agency FB';@if(app()->getLocale()=='ar') font-family: 'Rakkas', cursive; @endif  " class="d-inline ">{{__('Recent books')}}</h1>
     <hr>
     <div class="row">
         @foreach($recent as $book)
-            <div  class=" col-lg-3">
+            <div  class="row_book{{$book->id}} col-lg-3">
                 <div class="card" >
 
                     @if($book->img !=null)
@@ -94,7 +95,7 @@
                     _token: _token
                 },
                 success: function(response) {
-                    $("#row_book"+id).remove();
+                    $(".row_book"+id).remove();
                 }
             });
         }
@@ -102,7 +103,9 @@
     </script>
 @endsection
 
+@section('scripts')
 
+@endsection
 
 
 
